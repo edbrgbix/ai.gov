@@ -7,43 +7,20 @@ const menuLabel = `platform-footer-${slugify(content.title, {
 })}`;
 ---
 
-<p id={menuLabel}>{content.title}</p>
-<ul class="add-list-reset" aria-labelledby={menuLabel}>
+<p id={menuLabel} class="text-gray-500 mt-0 mb-4">{content.title}</p>
+<ul class="add-list-reset mb-8" aria-labelledby={menuLabel}>
   {
     content.items.map(item => {
       return (
-        <li>
-          <a href={item.url}>{item.title}</a>
+        <li class="block mb-4">
+          <a
+            href={item.url}
+            class="hover:underline no-underline block text-black"
+          >
+            {item.title}
+          </a>
         </li>
       );
     })
   }
 </ul>
-
-<style>
-  p {
-    color: #8d8d8d; /* needs more contrast. */
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
-
-  ul {
-    margin-bottom: 2rem;
-  }
-
-  li {
-    line-height: 140%;
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  a {
-    text-decoration: none;
-    display: block;
-    color: #000;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-</style>

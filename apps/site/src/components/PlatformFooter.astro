@@ -3,32 +3,30 @@ import { footerMenus } from '../data/footer';
 import PlatformFooterMenu from './PlatformFooterMenu.astro';
 ---
 
-<div class="mx-auto px-8">
+<div class="px-8">
   <section
     class="border-b border-gray-300 py-14"
     aria-labelledby="ai-footer-cta"
   >
     <p class="mb-6" id="ai-footer-cta">Get your team started today</p>
-    <div class="flex flex-wrap gap-6">
-      <ul class="flex items-center gap-6">
-        <li>
-          <a
-            class="bg-black text-white rounded-full font-normal px-8 py-3 hover:bg-gray-800"
-            href="#">Contact Sales</a
-          >
-        </li>
-        <li>
-          <a
-            class="shadow-[inset_0_0_0_2px_#000] text-black rounded-full font-normal px-8 py-3 hover:border-gray-800 hover:text-gray-800"
-            href="#">Start Building</a
-          >
-        </li>
-      </ul>
-    </div>
+    <ul class="flex items-center gap-6">
+      <li>
+        <a
+          class="block bg-black text-white rounded-full font-normal px-8 py-3 hover:bg-gray-800"
+          href="#">Contact Sales</a
+        >
+      </li>
+      <li>
+        <a
+          class="block shadow-[inset_0_0_0_2px_#000] text-black rounded-full font-normal px-8 py-3 hover:border-gray-800 hover:text-gray-800"
+          href="#">Start Building</a
+        >
+      </li>
+    </ul>
   </section>
   <section class="py-14">
     <nav aria-label="Footer navigation">
-      <div class="grid gap-5 grid-cols-4">
+      <div class="md:grid gap-5 grid-cols-4">
         {
           footerMenus.map(menu => {
             return (

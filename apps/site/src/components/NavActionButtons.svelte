@@ -14,6 +14,10 @@
 </div>
 
 <style>
+  .ai-menu-buttons {
+    display: flex;
+    gap: 1rem;
+  }
   @media (max-width: 64em) {
     .ai-menu-buttons {
       flex-direction: column;
@@ -23,10 +27,5 @@
       bottom: 0;
       width: 90%;
     }
-  }
-
-  .ai-menu-buttons {
-    display: flex;
-    gap: 1rem;
   }
 </style>

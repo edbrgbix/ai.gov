@@ -44,6 +44,9 @@ export default {
         {
           destination: 'variables.css',
           format: cssVariables,
+          filter: (token: TransformedToken) => {
+            return !token.name.includes('size-breakpoint');
+          },
         },
         {
           destination: 'token-list.json',

@@ -12,33 +12,48 @@
   }
 </script>
 
-<svg
-  viewBox={`0 0 ${svgWidth} ${entries.length * rowHeight}`}
-  width="100%"
-  height="auto"
-  preserveAspectRatio="xMinYMin meet"
->
-  {#each entries as [label, count], i}
-    <text x="0" y={i * rowHeight + 25} font-size="12">
-      {toTitleCase(label)}
-    </text>
+<figure role="group" aria-labelledby="chartTitle chartDesc">
+  <figcaption id="chartDesc" class="usa-sr-only">
+    Bar chart showing top 10 topics by prompt count
+  </figcaption>
 
-    <rect
-      x="150"
-      y={i * rowHeight + 10}
-      width={(count / entries[0][1]) * 400}
-      height="20"
-      fill="var(--ai-color-blue-400)"
-      rx="4"
-      ry="4"
-    />
+  <svg
+    viewBox={`0 0 ${svgWidth} ${(entries.length * rowHeight) + 10}`}
+    width="100%"
+    height="100%"
+    role="img"
+    preserveAspectRatio="xMinYMin meet"
+    aria-labelledby="chartTitle chartDesc"
+  >
+  <title>Trending topics - Top 10 topics by prompt count</title>
+    {#each entries as [label, count], i}
+      <text x="0" y={i * rowHeight + 25} font-size="12">
+        {toTitleCase(label)}
+      </text>
 
-    <text
-      x={150 + (count / entries[0][1]) * 400 + 8}
-      y={i * rowHeight + 25}
-      font-size="12"
-    >
-      {count.toLocaleString()}
-    </text>
-  {/each}
-</svg>
+      <rect
+        x="150"
+        y={i * rowHeight + 10}
+        width={(count / entries[0][1]) * 400}
+        height="20"
+        fill="var(--ai-color-blue-400)"
+        rx="4"
+        ry="4"
+      />
+
+      <text
+        x={150 + (count / entries[0][1]) * 400 + 8}
+        y={i * rowHeight + 25}
+        font-size="12"
+      >
+        {count.toLocaleString()}
+      </text>
+    {/each}
+  </svg>
+</figure>
+
+<style>
+  figure {
+    margin: 0;
+  }
+</style>

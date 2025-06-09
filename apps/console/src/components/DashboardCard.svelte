@@ -1,9 +1,11 @@
 <script lang="ts">
   export let title: string; 
   export let titleId: string;
+  export let subTitle: string;
   export let headingLevel = 'h2'; 
   export let halfWidth: boolean = false;
   export let fullWidth: boolean = false;
+  export let centerViz = false;
   const layoutClassMap: Record<'full' | 'half' | 'default', string> = {
     full: 'ai-dashboard-card--full',
     half: 'ai-dashboard-card--half',
@@ -23,15 +25,16 @@
 
 <section aria-labelledby={titleId} class={`ai-dashboard-card ${layoutClass}`}>
   <div class="ai-dashboard-card__header">
-  <svelte:element this={headingLevel} id={titleId} class="ai-dashboard-card-header">{title}</svelte:element>   
-    <div class="ai-card-actions" aria-label="Dashboard card actions" hidden={!actions.length}>
+  <svelte:element this={headingLevel} id={titleId} class="ai-dashboard-card-header">{title}</svelte:element>
+    <div class="ai-card-actions" hidden={!actions.length}>
       <slot name="actions" />
     </div>
   </div>
-  <div class="ai-dashboard-card__body">    
-      <slot/>
+  <div class="ai-dashboard-card__body">
+    <p class="margin-0 font-body-2xs">{subTitle}</p>    
+    <slot/>
   </div>
-  <div class="ai-dashboard-data-viz">
+  <div class="ai-dashboard-data-viz" class:ai-dashboard-data-viz--centered={centerViz}>
     <slot name="data-viz"/>
   </div>
   <div class="ai-dashboard-footer">
@@ -59,10 +62,15 @@
   .ai-dashboard-card--full {
     grid-column: 1 / -1;
   }
+  .centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .ai-dashboard-card-header {
     font-size: var(--ai-size-14); 
-    color: var(--ai-color-neutral-800);
-    font-weight: 700; 
+    color: var(--ai-color-steel-800);
+    font-weight: 400; 
     margin: 0; 
   }
   .ai-dashboard-card__header {
@@ -122,6 +130,11 @@
         gap: var(--ai-size-4);
       }
     }
+  }
+  .ai-dashboard-data-viz--centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .ai-dashboard-footer > :global(*) {
     align-self: flex-start;

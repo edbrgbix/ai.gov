@@ -129,8 +129,9 @@ const svgHeight = entries.length * rowHeight;
 
     <DashboardCard
       title="Model Comparison"
-      titleId="trending-topics"
+      titleId="model-comparison"
       halfWidth={true}
+      centerViz={true}
     >
       <svelte:fragment slot="actions"></svelte:fragment>
       <svelte:fragment slot="data-viz">
@@ -139,20 +140,20 @@ const svgHeight = entries.length * rowHeight;
     </DashboardCard>
 
     <DashboardCard
-      title="Trending Topics"
-      titleId="trending-topics"
+      title="Trending Topics Bar Chart"
+      titleId="trending-tops-bar"
       halfWidth={true}
+      subTitle="Top 10 topics by prompt count"
     >
       <svelte:fragment slot="actions"></svelte:fragment>
       <svelte:fragment slot="data-viz">
-        <p class="margin-top-0 font-body-2xs">Top 10 topics by prompt count</p>
         <BarChart data={trendingTopics.topic_counts} />
       </svelte:fragment>
     </DashboardCard>
 
     <DashboardCard
-      title="Trending Topics"
-      titleId="trending-topics"
+      title="Trending Topics Tags"
+      titleId="trending-topics-tags"
       fullWidth={true}
     >
       <svelte:fragment slot="actions">
@@ -184,19 +185,16 @@ const svgHeight = entries.length * rowHeight;
     gap: var(--ai-size-32);
     margin-bottom: var(--ai-size-32);
   }
-
   @media (min-width: 87.5rem) {
     .ai-dashboard__overview {
       grid-template-columns: repeat(2, 1fr);
     }
   }
-
   @media (min-width: 75rem) {
     .ai-dashboard__overview {
       grid-template-columns: repeat(4, 1fr);
     }
   }
-
   .ai-dashboard-tag-cloud {
     padding: var(--ai-size-16) 0;
     display: flex;

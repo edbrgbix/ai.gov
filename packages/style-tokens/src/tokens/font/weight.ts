@@ -3,8 +3,10 @@ import type { FontTuple } from './index.js';
 
 const fontWeights: FontTuple[] = [
   ['400', '400'],
+  ['500', '500'],
   ['600', '600'],
   ['normal', '{font.weight.400}'],
+  ['medium', '{font.weight.500}'],
   ['semibold', '{font.weight.600}'],
 ];
 

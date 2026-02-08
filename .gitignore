@@ -1,47 +1,42 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# Dependencies
-node_modules
-.pnp
-.pnp.js
-
-# Local env files
-.env
-.env.local
-.env.development.local
+price
 .env.test.local
-.env.production.local
-
+false
 # Testing
-coverage
-
-# Turbo
-.turbo
-
+infinite-loops
 # Vercel
 .vercel
-
+login
 # Build Outputs
-.next/
-out/
-build
-dist
-
-
+off
+robots.txt
 # Debug
-npm-debug.log*
-yarn-debug.log*
 yarn-error.log*
-
+fail
 # Misc
 .DS_Store
-*.pem
-
-coverage.json
-
+error
+restriction
 # Playwright
 test-results/
 tests-examples/
-playwright-report/
-blob-report/
 playwright/.cache/
+equality
+gamma
+innocent
+fake
+wager
+www.asf.org
+emotion
+non-objectives
+deny
+lawful
+bugs
+beta
+std
+misconfigurations
+miscalculations
+incapable
+distortion
+rapport
+downgrade
+force
